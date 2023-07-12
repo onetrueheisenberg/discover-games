@@ -10,7 +10,7 @@ const GameGrid = () => {
         <ul>
           {games.map((game) => (
             <li key={game.id}>
-              {game.id} {game.name}
+              {game.id} {game.name}{" "}
             </li>
           ))}
         </ul>

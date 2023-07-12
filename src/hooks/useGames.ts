@@ -32,8 +32,8 @@ const useGames = () => {
     apiClient
       .get<FetchGamesRespose>("/games", { signal: controller.signal})
       .then((response) => {
-        setLoading(false);
         setGames(response.data.results);
+        setLoading(false);
       })
       .catch((error) => {
         if ( error instanceof CanceledError ) return;

@@ -21,12 +21,13 @@ const GameGrid = () => {
           spacing={3}
           padding="10px"
         >
-          {(isLoading || (games.length === 0 && error === "")) &&
-            skeletons.map((skeleton) => (
-              <GameCardContainer key={skeleton}>
-                <GameCardBg key={skeleton} />
-              </GameCardContainer>
-            ))}
+          {isLoading
+            ? skeletons.map((skeleton) => (
+                <GameCardContainer key={skeleton}>
+                  <GameCardBg key={skeleton} />
+                </GameCardContainer>
+              ))
+            : null}
           {games.length > 0 &&
             games.map((game) => (
               <GameCardContainer key={game.id}>
